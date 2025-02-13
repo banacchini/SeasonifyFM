@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Artists</title>
+</head>
+<body>
+    <h1>Seasonal Artists</h1>
+    <img src="{{ url_for('main.seasonal_artists') }}" alt="Seasonal Artists Chart">
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.home') }}">Home</a></li>
+            <li><a href="{{ url_for('main.about') }}">About</a></li>
+            <li><a href="{{ url_for('main.seasonal_artists') }}">Seasonal Artists</a></li>
+            <li><a href="{{ url_for('main.artist_streams') }}">Artist Streams</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

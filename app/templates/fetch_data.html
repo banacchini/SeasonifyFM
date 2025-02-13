@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Fetch Data</title>
+</head>
+<body>
+    <h1>Fetch Streaming Data</h1>
+    <form method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="years">Number of Years:</label>
+        <input type="number" id="years" name="years" min="1" required>
+        <br>
+        <button type="submit">Fetch Data</button>
+    </form>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.home') }}">Home</a></li>
+            <li><a href="{{ url_for('main.about') }}">About</a></li>
+            <li><a href="{{ url_for('main.seasonal_artists') }}">Seasonal Artists</a></li>
+            <li><a href="{{ url_for('main.artist_streams') }}">Artist Streams</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
