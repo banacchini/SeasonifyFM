@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Data Analysis</title>
+    <script>
+        function fetchAndDisplay(url, elementId) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: '{{ user }}',
+                    years: '{{ years }}'
+                })
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                document.getElementById(elementId).src = url;
+            });
+        }
+
+        function showSeasonalArtists() {
+            fetchAndDisplay('{{ url_for('main.seasonal_artists') }}', 'result');
+        }
+
+        function showTop10ArtistsMonthlyStreams() {
+            fetchAndDisplay('{{ url_for('main.top_10_artists_monthly_streams') }}', 'result');
+        }
+
+        function createSeasonalPlaylists() {
+            fetch('{{ url_for('main.create_seasonal_playlists') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: '{{ user }}',
+                    years: '{{ years }}'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the seasonal playlists creation results
+                console.log(data);
+                document.getElementById('result').innerText = 'Playlists created successfully!';
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Data Analysis for {{ user }}</h1>
+    <button onclick="showSeasonalArtists()">Show Seasonal Artists Chart</button>
+    <button onclick="showTop10ArtistsMonthlyStreams()">Show Top 10 Streamed Artists Monthly Streams</button>
+    <button onclick="createSeasonalPlaylists()">Create Seasonal Spotify Playlists</button>
+    <img id="result" src="" alt="Result" style="display: block; margin-top: 20px;">
+</body>
+</html>

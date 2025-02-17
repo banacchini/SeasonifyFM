@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>SeasonifyFM</title>
 </head>
 <body>
-    <h1>Welcome to SeasonifyFM!</h1>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('main.home') }}">Home</a></li>
-            <li><a href="{{ url_for('main.about') }}">About</a></li>
-            <li><a href="{{ url_for('main.fetch_data') }}">Fetch Data</a></li>
-            <li><a href="{{ url_for('main.seasonal_artists') }}">Seasonal Artists</a></li>
-            <li><a href="{{ url_for('main.artist_streams') }}">Artist Streams</a></li>
-        </ul>
+    <div class = "hero">
+        <img src="{{ url_for('static', filename='leaf-icon.svg') }}" alt="Leaf Logo">
+        <h1>SeasonifyFM</h1>
+    </div>
+    <nav class="buttons">
+        <a class="fetch-button" href="/fetch_data">Analyze</a>
+        <a class="nav-button" href="/about">About</a>
     </nav>
 </body>
 </html>

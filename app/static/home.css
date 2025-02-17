@@ -1,0 +1,55 @@
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    margin: 0;
+    /*height: 20%;*/
+}
+
+.hero img{
+    aspect-ratio: initial;
+}
+
+.hero h1 {
+    font-family: Montserrat;
+    font-size: 10rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    width: 40%;
+    justify-self: center;
+}
+
+.buttons a {
+    padding: 1.5rem 3rem;
+    border: 5px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.nav-button{
+    /*background-color: white;*/
+    color: white;
+}
+
+.fetch-button {
+    background-color: #1ed760;
+    color: white;
+}

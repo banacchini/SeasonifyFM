@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Fetch Streaming Data</h1>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('main.fetch_data') }}">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
@@ -21,8 +21,6 @@
         <ul>
             <li><a href="{{ url_for('main.home') }}">Home</a></li>
             <li><a href="{{ url_for('main.about') }}">About</a></li>
-            <li><a href="{{ url_for('main.seasonal_artists') }}">Seasonal Artists</a></li>
-            <li><a href="{{ url_for('main.artist_streams') }}">Artist Streams</a></li>
         </ul>
     </nav>
 </body>
